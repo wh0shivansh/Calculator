@@ -2,6 +2,7 @@ const screen = document.getElementById('display');
 buttons = document.querySelectorAll('button');
 let screenVal = "";
 let isBracket = true;
+let isDot = true;
 const theme1 = document.getElementById('theme1');
 const theme2 = document.getElementById('theme2');
 const theme3 = document.getElementById('theme3');
@@ -49,6 +50,7 @@ for(btn of buttons){
         if(btnText == "AC"){
             screen.value = "";
             isBracket=true;
+            isDot=true;
         }
         else if(btnText == "="){
             lastQuery.innerText = screen.value;
@@ -66,6 +68,15 @@ for(btn of buttons){
         else if(btnText == "<-"){
             screen.value = screen.value.slice(0,-1);
         }
+        else if(btnText == "."){
+            if(isDot){
+                screen.value += ".";
+                isDot=false;
+            }
+            else{
+                screen.value=screen.value;
+            }
+        }
         else if(btnText == "()"){
             if(isBracket){
                 screen.value+="(";
@@ -75,6 +86,10 @@ for(btn of buttons){
                 screen.value += ")";
                 isBracket=!isBracket;
             }
+        }
+        else if(btnText == "/" || btnText == "+" || btnText == "-" || btnText == "*" || btnText == "%"){
+            isDot = true;
+            screen.value+=btnText;
         }
         else{
             // let strEval = String(eval(screen.value));
