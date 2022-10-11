@@ -7,6 +7,12 @@ const theme2 = document.getElementById('theme2');
 const theme3 = document.getElementById('theme3');
 const mainBody = document.querySelector("body");
 const lastQuery = document.getElementById('last-query');
+const animText = document.getElementById('anim-text');
+
+let animControl = setTimeout(()=>{
+    animText.classList.add('display-none');
+},5000);
+
 
 
 theme2.addEventListener('click',()=>{  
