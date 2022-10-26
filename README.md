@@ -14,4 +14,4 @@ And Many more different themes.
 It Follows the basic BODMAS rule for the calculation and has 3 different themes.
 
 Check it on the web now!
-Live Link - https://wh0shivansh.github.io/Calculator/
+Live Link - https://wh0shivansh.github.io/Calculator-Javascript/
